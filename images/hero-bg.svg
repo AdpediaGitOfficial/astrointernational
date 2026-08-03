@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="hg" gradientTransform="rotate(28 .5 .5)">
-      <stop offset="0" stop-color="#081828"/><stop offset="0.55" stop-color="#0f2b46"/><stop offset="1" stop-color="#0a5b37"/>
+      <stop offset="0" stop-color="#081828"/><stop offset="0.55" stop-color="#011437"/><stop offset="1" stop-color="#0a5b37"/>
     </linearGradient>
     <radialGradient id="hl" cx="78%" cy="26%" r="46%">
       <stop offset="0" stop-color="#16b364" stop-opacity="0.4"/><stop offset="1" stop-color="#16b364" stop-opacity="0"/>
