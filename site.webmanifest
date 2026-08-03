@@ -1,0 +1,14 @@
+{
+  "name": "Astro International",
+  "short_name": "Astro",
+  "description": "UAE-based procurement partner for industrial safety, medical, building, and consumer products.",
+  "icons": [
+    { "src": "favicon-32.png", "type": "image/png", "sizes": "32x32" },
+    { "src": "apple-touch-icon.png", "type": "image/png", "sizes": "180x180" },
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any maskable" }
+  ],
+  "theme_color": "#0f2b46",
+  "background_color": "#0f2b46",
+  "display": "standalone",
+  "start_url": "index.html"
+}

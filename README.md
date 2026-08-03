@@ -21,9 +21,15 @@ amount of vanilla JavaScript. Open any `.html` file directly in a browser.
 ├── request-quote.html    Request-for-quote form
 ├── css/
 │   └── style.css         Full hand-written design system (navy / emerald)
-└── js/
-    └── main.js           Sticky header, mobile menu, search toggle,
-                          reveal-on-scroll, form handling, list filtering
+├── js/
+│   └── main.js           Sticky header, mobile menu, search toggle,
+│                         reveal-on-scroll, form handling, list filtering
+├── favicon.svg           Brand mark (navy square + emerald globe)
+├── favicon.ico           ICO fallback (32×32)
+├── favicon-32.png        PNG favicon
+├── apple-touch-icon.png  180×180 iOS home-screen icon
+├── icon-192.png          192×192 PWA / maskable icon
+└── site.webmanifest      Web app manifest (name, icons, theme colour)
 ```
 
 ## Design
