@@ -41,14 +41,15 @@ The look and layout are ported 1:1 from the original design:
 - **Typography:** Inter with a system-font fallback (no external font request).
 - **Components:** semantic class names (`.card`, `.btn`, `.hero`, `.section`,
   `.feature`, `.tst`, …) instead of utility soup, so the markup stays readable.
-- **Images:** self-contained branded SVG cover graphics live in `images/`
-  (`cover-safety.svg`, `cover-medical.svg`, `cover-building.svg`,
-  `cover-consumer.svg`, `cover-corporate.svg`, `cover-aviation.svg`,
-  `cover-industrial.svg`, and the wide `hero-bg.svg`). They render fully
-  offline — no remote hosts. **To use real photography instead**, drop your own
-  `.jpg`/`.webp` into `images/` and point the card's `<img src="…">` at it
-  (or simply overwrite a `cover-*.svg` with a same-named image). All card media
-  use `object-fit: cover`, so any aspect ratio fits cleanly.
+- **Images:** every card has its own self-contained SVG cover in `images/`,
+  named after the item's slug — e.g. `industrial-safety-helmet.svg`,
+  `healthcare.svg`, `hospital-wing.svg`, plus the wide `hero-bg.svg` and the
+  page-header `cover-corporate.svg`. Each is a gradient-mesh graphic with a
+  subtle grain and a thematic motif; they render fully offline (no remote
+  hosts). **To use real photography instead**, drop a `.jpg`/`.webp` into
+  `images/` and either overwrite the same-named file or point the card's
+  `<img src="…">` at it. All card media use `object-fit: cover`, so any aspect
+  ratio fits cleanly.
 
 ## Zero dependencies
 
