@@ -41,10 +41,14 @@ The look and layout are ported 1:1 from the original design:
 - **Typography:** Inter with a system-font fallback (no external font request).
 - **Components:** semantic class names (`.card`, `.btn`, `.hero`, `.section`,
   `.feature`, `.tst`, …) instead of utility soup, so the markup stays readable.
-- **Images:** self-contained CSS placeholders (gradient + icon) so pages render
-  fully offline with no broken images. To use real photography, replace a
-  placeholder `<div class="ph …">…</div>` with an `<img>` inside the same
-  `.media` container.
+- **Images:** self-contained branded SVG cover graphics live in `images/`
+  (`cover-safety.svg`, `cover-medical.svg`, `cover-building.svg`,
+  `cover-consumer.svg`, `cover-corporate.svg`, `cover-aviation.svg`,
+  `cover-industrial.svg`, and the wide `hero-bg.svg`). They render fully
+  offline — no remote hosts. **To use real photography instead**, drop your own
+  `.jpg`/`.webp` into `images/` and point the card's `<img src="…">` at it
+  (or simply overwrite a `cover-*.svg` with a same-named image). All card media
+  use `object-fit: cover`, so any aspect ratio fits cleanly.
 
 ## Zero dependencies
 
