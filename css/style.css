@@ -347,6 +347,23 @@ body.modal-open { overflow: hidden; }
 .prod-card .body p { margin-top: .5rem; font-size: .875rem; color: var(--muted); line-height: 1.6; }
 .prod-card .more { margin-top: 1rem; }
 
+/* ----- Products page: division panels ------------------------------------ */
+.cat-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 900px) { .cat-panels { grid-template-columns: 1fr; } }
+.cat-panel { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; box-shadow: var(--shadow-sm); transition: box-shadow .3s ease, border-color .3s ease; }
+.cat-panel:hover { box-shadow: var(--shadow-md); border-color: var(--emerald-200); }
+.cat-panel-head { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; }
+.cat-panel-head .ci { display: inline-flex; align-items: center; justify-content: center; height: 3rem; width: 3rem; border-radius: .75rem; background: var(--navy-900); color: #fff; flex-shrink: 0; }
+.cat-panel-head h3 { font-size: 1.25rem; color: var(--navy-900); margin-bottom: .375rem; }
+.cat-panel-head p { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+.range { flex: 1; border-top: 1px solid var(--border); padding-top: 1.25rem; margin-bottom: 1.5rem; }
+.range-label { display: block; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--emerald-600); margin-bottom: .875rem; }
+.range-list { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem 1rem; }
+@media (max-width: 520px) { .range-list { grid-template-columns: 1fr; } }
+.range-list li { position: relative; padding-left: 1.25rem; font-size: .875rem; color: var(--navy-700); line-height: 1.4; }
+.range-list li::before { content: ""; position: absolute; left: 0; top: .5em; width: .4rem; height: .4rem; border-radius: 50%; background: var(--emerald-500); }
+.cat-cta { align-self: flex-start; }
+
 .clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
 .clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
