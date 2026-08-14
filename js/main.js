@@ -141,6 +141,55 @@
     if (dlType) dlType.addEventListener('change', applyDl);
   }
 
+  /* Enquiry modal */
+  var eOverlay = document.getElementById('enquiry-overlay');
+  var eModal = document.getElementById('enquiry-modal');
+  if (eModal) {
+    var eBody = document.getElementById('enquiry-body');
+    var eSuccess = document.getElementById('enquiry-success');
+    var eForm = document.getElementById('enquiry-form');
+    var eInterest = document.getElementById('enquiry-interest');
+    var eTitle = document.getElementById('enquiry-title');
+
+    function openEnquiry(interest) {
+      if (eBody) eBody.style.display = '';
+      if (eSuccess) eSuccess.style.display = 'none';
+      if (eForm) eForm.reset();
+      if (eInterest) eInterest.value = interest || '';
+      if (eTitle) eTitle.textContent = interest ? ('Enquire About ' + interest) : 'Request Information';
+      eOverlay.classList.add('open');
+      eModal.classList.add('open');
+      document.body.classList.add('modal-open');
+      var first = eModal.querySelector('input:not([readonly])');
+      if (first) setTimeout(function () { first.focus(); }, 60);
+    }
+    function closeEnquiry() {
+      eOverlay.classList.remove('open');
+      eModal.classList.remove('open');
+      document.body.classList.remove('modal-open');
+    }
+
+    document.querySelectorAll('[data-enquiry]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        openEnquiry(el.getAttribute('data-enquiry'));
+      });
+    });
+    document.querySelectorAll('[data-enquiry-close]').forEach(function (el) {
+      el.addEventListener('click', closeEnquiry);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && eModal.classList.contains('open')) closeEnquiry();
+    });
+    if (eForm) {
+      eForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (eBody) eBody.style.display = 'none';
+        if (eSuccess) eSuccess.style.display = '';
+      });
+    }
+  }
+
   /* Footer year */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

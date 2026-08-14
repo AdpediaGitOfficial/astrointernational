@@ -244,6 +244,23 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
 .drawer nav a:hover, .drawer nav a.active { background: var(--navy-50); color: var(--emerald-600); }
 .drawer .close { position: absolute; top: 1rem; right: 1rem; color: var(--navy-600); }
 
+/* ----- Enquiry modal ----------------------------------------------------- */
+.modal-overlay { position: fixed; inset: 0; background: rgba(1,20,55,.55); backdrop-filter: blur(2px); z-index: 80; opacity: 0; visibility: hidden; transition: opacity .25s ease; }
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal {
+  position: fixed; z-index: 90; left: 50%; top: 50%;
+  transform: translate(-50%, -46%) scale(.98); opacity: 0; visibility: hidden;
+  width: min(34rem, calc(100vw - 2rem)); max-height: calc(100vh - 2rem); overflow-y: auto;
+  background: #fff; border-radius: 1rem; box-shadow: var(--shadow-xl); padding: 2rem;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.modal.open { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
+.modal-close { position: absolute; top: 1rem; right: 1rem; color: var(--navy-600); display: inline-flex; padding: .25rem; border-radius: .375rem; }
+.modal-close:hover { color: var(--navy-900); background: var(--navy-50); }
+.modal h3 { font-size: 1.4rem; color: var(--navy-900); margin: .25rem 0 .5rem; }
+.modal-sub { color: var(--muted); font-size: .9rem; margin-bottom: 1.25rem; }
+body.modal-open { overflow: hidden; }
+
 /* ----- Hero -------------------------------------------------------------- */
 .hero { position: relative; overflow: hidden; background: var(--navy-900); }
 .hero .bg-grid { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; opacity: .2; }
@@ -492,6 +509,7 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
 .ind-card .media h3 { font-size: 1.25rem; color: #fff; }
 .ind-card .media p { margin-top: .25rem; font-size: .875rem; color: rgba(255,255,255,.7); }
 .ind-card .foot { padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+.ind-card .foot.foot-end { justify-content: flex-end; }
 .ind-card .foot span { font-size: .875rem; color: var(--muted); }
 
 /* Brand card */
