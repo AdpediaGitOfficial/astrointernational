@@ -432,7 +432,7 @@ body.modal-open { overflow: hidden; }
 .cta-band .actions { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
 /* CTA image variant: photo background shown clearly, white text over a soft navy scrim */
 .cta-band.cta-image { background: var(--navy-900); }
-.cta-band.cta-image::before { content: ''; position: absolute; inset: 0; z-index: 0; background: url(../images/image-bg.jpg) center/cover no-repeat; }
+.cta-band.cta-image::before { content: ''; position: absolute; inset: 0; z-index: 0; background: url(../images/image-bg.jpg) center/cover no-repeat; opacity: .75; }
 .cta-band.cta-image::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(0,22,62,.38), rgba(0,22,62,.55)); }
 .cta-band.cta-image .inner { z-index: 2; }
 
