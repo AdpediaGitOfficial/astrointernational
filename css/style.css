@@ -677,3 +677,13 @@ body.modal-open { overflow: hidden; }
 .ph-tint svg { width: 4rem; height: 4rem; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Floating WhatsApp button (persistent on every page) */
+.wa-fab { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60; display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.1rem; border-radius: 999px; background: #25d366; color: #fff; font-weight: 600; font-size: .9rem; box-shadow: 0 8px 24px rgba(0,0,0,.22); transition: transform .2s ease, box-shadow .2s ease; }
+.wa-fab:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.28); color: #fff; }
+.wa-fab svg { width: 1.5rem; height: 1.5rem; flex-shrink: 0; }
+.wa-fab span { white-space: nowrap; }
+@media (max-width: 640px) {
+  .wa-fab { right: 1rem; bottom: 1rem; padding: .85rem; }
+  .wa-fab span { display: none; }
+}

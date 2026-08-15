@@ -2,6 +2,37 @@
 (function () {
   'use strict';
 
+  /* ---- WhatsApp hand-off: turn a filled form into a pre-composed message ---- */
+  var WA_TITLES = {
+    'enquiry-form': 'New product enquiry from the Astro International website',
+    'rfq-form': 'New quote request (RFQ) from the Astro International website',
+    'contact-form': 'New message from the Astro International website'
+  };
+  function fieldLabel(field) {
+    var l = field.querySelector('label');
+    return l ? l.textContent.replace(/\*/g, '').trim() : '';
+  }
+  function buildWaMessage(form) {
+    var lines = [];
+    Array.prototype.forEach.call(form.querySelectorAll('.field'), function (field) {
+      var ctrl = field.querySelector('input:not([type=file]):not(.sr-only), select, textarea');
+      if (!ctrl) return;
+      var val = (ctrl.value || '').trim();
+      if (!val) return;
+      var label = fieldLabel(field) || (ctrl.getAttribute('name') || 'Detail');
+      lines.push('*' + label + ':* ' + val);
+    });
+    var title = WA_TITLES[form.id] || 'New enquiry from the Astro International website';
+    return title + '\n\n' + (lines.length ? lines.join('\n') : '(no details entered)');
+  }
+  function openWhatsApp(form) {
+    var num = form.getAttribute('data-wa');
+    if (!num) return;
+    var url = 'https://wa.me/' + num + '?text=' + encodeURIComponent(buildWaMessage(form));
+    var w = window.open(url, '_blank');
+    if (!w) window.location.href = url; /* fallback if a popup blocker intervenes */
+  }
+
   /* Sticky header glass-on-scroll */
   var header = document.querySelector('.header');
   if (header) {
@@ -53,6 +84,7 @@
   document.querySelectorAll('form[data-demo]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (form.hasAttribute('data-wa')) openWhatsApp(form);
       var successId = form.getAttribute('data-success');
       var success = successId ? document.getElementById(successId) : null;
       if (success) {
@@ -184,6 +216,7 @@
     if (eForm) {
       eForm.addEventListener('submit', function (e) {
         e.preventDefault();
+        if (eForm.hasAttribute('data-wa')) openWhatsApp(eForm);
         if (eBody) eBody.style.display = 'none';
         if (eSuccess) eSuccess.style.display = '';
       });
