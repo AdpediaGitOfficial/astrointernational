@@ -440,8 +440,8 @@ body.modal-open { overflow: hidden; }
 .page-header { position: relative; overflow: hidden; background: var(--navy-900); padding: 5rem 0; }
 @media (min-width: 1024px) { .page-header { padding: 7rem 0; } }
 .page-header .bg-img { position: absolute; inset: 0; }
-.page-header .bg-img img { width: 100%; height: 100%; object-fit: cover; opacity: .2; }
-.page-header .bg-img .shade { position: absolute; inset: 0; background: linear-gradient(to right, var(--navy-950), rgba(0,22,62,.7)); }
+.page-header .bg-img img { width: 100%; height: 100%; object-fit: cover; opacity: 1; }
+.page-header .bg-img .shade { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,8,26,.78), rgba(0,22,62,.30)); }
 .page-header .inner { position: relative; max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
 .crumb { display: flex; align-items: center; gap: .375rem; font-size: .875rem; color: rgba(255,255,255,.5); margin-bottom: 1.25rem; }
 .crumb a:hover { color: var(--emerald-400); }
