@@ -299,7 +299,7 @@ body.modal-open { overflow: hidden; }
 .marquee-wrap::after { right: 0; background: linear-gradient(to left, #fff, transparent); }
 .marquee { display: flex; gap: 2rem; width: max-content; animation: marquee 40s linear infinite; }
 .marquee .logo { display: flex; align-items: center; justify-content: center; min-width: 200px; height: 5rem; }
-.marquee .logo span { font-size: 1.25rem; font-weight: 700; color: var(--navy-200); white-space: nowrap; transition: color .3s ease; }
+.marquee .logo span { font-size: 1.25rem; font-weight: 700; color: #467ca0; white-space: nowrap; transition: color .3s ease; }
 .marquee .logo:hover span { color: var(--navy-800); }
 
 /* ----- Generic card grids ------------------------------------------------ */
