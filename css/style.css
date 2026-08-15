@@ -430,16 +430,11 @@ body.modal-open { overflow: hidden; }
 .cta-band h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); color: #fff; }
 .cta-band p { margin-top: 1rem; font-size: 1.125rem; color: rgba(255,255,255,.7); max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.7; }
 .cta-band .actions { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-/* CTA "light wash" variant: light image background with dark, readable text */
-.cta-band.cta-light { background: #eef2f6; }
-.cta-band.cta-light::before { content: ''; position: absolute; inset: 0; z-index: 0; background: url(../images/image-bg.jpg) center/cover no-repeat; }
-.cta-band.cta-light::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(244,247,250,.74), rgba(238,242,246,.85)); }
-.cta-band.cta-light .inner { z-index: 2; }
-.cta-band.cta-light h2 { color: var(--navy-900); }
-.cta-band.cta-light p { color: #334155; }
-.cta-band.cta-light .badge-i { box-shadow: 0 8px 20px rgba(0,22,62,.18); }
-.cta-band.cta-light .btn-glass { background: #fff; border: 1px solid var(--navy-900); color: var(--navy-900); backdrop-filter: none; }
-.cta-band.cta-light .btn-glass:hover { background: var(--navy-900); color: #fff; }
+/* CTA image variant: photo background shown clearly, white text over a soft navy scrim */
+.cta-band.cta-image { background: var(--navy-900); }
+.cta-band.cta-image::before { content: ''; position: absolute; inset: 0; z-index: 0; background: url(../images/image-bg.jpg) center/cover no-repeat; }
+.cta-band.cta-image::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(0,22,62,.38), rgba(0,22,62,.55)); }
+.cta-band.cta-image .inner { z-index: 2; }
 
 /* ----- Page header ------------------------------------------------------- */
 .page-header { position: relative; overflow: hidden; background: var(--navy-900); padding: 5rem 0; }
