@@ -508,6 +508,13 @@ body.modal-open { overflow: hidden; }
 .form-layout > * { min-width: 0; }
 /* keep the visually-hidden file input from stretching the layout */
 .field input.sr-only, .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+/* Prevent iOS Safari from auto-zooming (and getting stuck zoomed-in) when a
+   form control smaller than 16px is focused. Applies only on touch-sized viewports. */
+@media (max-width: 768px) {
+  .field input, .field select, .field textarea,
+  .search-bar input, .footer .news input,
+  .toolbar .search input, .toolbar select { font-size: 16px; }
+}
 
 .form-note { padding: .75rem 1rem; border-radius: .5rem; font-size: .875rem; }
 .form-note.err { background: #fef2f2; color: #b91c1c; }
