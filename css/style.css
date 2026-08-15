@@ -350,8 +350,12 @@ body.modal-open { overflow: hidden; }
 /* ----- Products page: division panels ------------------------------------ */
 .cat-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 @media (max-width: 900px) { .cat-panels { grid-template-columns: 1fr; } }
-.cat-panel { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; box-shadow: var(--shadow-sm); transition: box-shadow .3s ease, border-color .3s ease; }
+.cat-panel { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow .3s ease, border-color .3s ease; }
 .cat-panel:hover { box-shadow: var(--shadow-md); border-color: var(--emerald-200); }
+.cat-media { height: 12rem; overflow: hidden; background: var(--navy-50); }
+.cat-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+.cat-panel:hover .cat-media img { transform: scale(1.05); }
+.cat-panel-inner { flex: 1; display: flex; flex-direction: column; padding: 2rem; }
 .cat-panel-head { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; }
 .cat-panel-head .ci { display: inline-flex; align-items: center; justify-content: center; height: 3rem; width: 3rem; border-radius: .75rem; background: var(--navy-900); color: #fff; flex-shrink: 0; }
 .cat-panel-head h3 { font-size: 1.25rem; color: var(--navy-900); margin-bottom: .375rem; }
